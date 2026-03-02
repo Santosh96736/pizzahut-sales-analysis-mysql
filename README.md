@@ -1,29 +1,29 @@
 # 🍕 PizzaHut Sales Analysis Using MySQL
 
-Structured and performance-optimized sales analysis of a stimulated PizzaHut dataset using MySQL, with schema normalization, workload-driven indexing, query performance validation using EXPLAIN, and data ingestion using Python.
+Structured and performance-optimized sales analysis of a simulated PizzaHut dataset using MySQL, with schema normalization, workload-driven indexing, query performance validation using EXPLAIN, and data ingestion using Python.
 
 
 # Table of Contents
 
-1. [Project Overview](#project-overview)
+1. [Project Overview](#1-project-overview)
 
-2. [Business Objectives](#business-objectives)
+2. [Business Objectives](#2-business-objectives)
 
-3. [Dataset](#dataset)
+3. [Dataset](#3-dataset)
 
-4. [Database Design & Normalization](#database-design-normalization)
+4. [Database Design & Normalization](#4-database-design-normalization)
 
-5. [Indexing & Performance Strategy](#indexing-performance-strategy)
+5. [Indexing & Performance Strategy](#5-indexing-performance-strategy)
 
-6. [Data Ingestion](#data-ingestion)
+6. [Data Ingestion](#6-data-ingestion)
 
-7. [Analytical Queries](#analytical-queries)
+7. [Analytical Queries](#7-analytical-queries)
 
-8. [Key Insights](#key-insights)
+8. [Key Insights](#8-key-insights)
 
-9. [Skills Demonstrated](#skills-demonstrated)
+9. [Skills Demonstrated](#9-skills-demonstrated)
 
-10. [Contact](#contact)
+10. [Contact](#10-contact)
     
 
 # 1. Project Overview
