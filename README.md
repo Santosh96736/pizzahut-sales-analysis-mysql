@@ -1,32 +1,32 @@
 # 🍕 PizzaHut Sales Analysis Using MySQL
 
-Structured and performance-optimized sales analysis of a simulated PizzaHut dataset using MySQL, with schema normalization, workload-driven indexing, query performance validation using EXPLAIN, and data ingestion using Python.
+Structured and performance-optimized sales analysis of a simulated transactional dataset representing pizza restaurant operations, implemented using MySQL.
 
 
-# Table of Contents
+## Table of Contents
 
-1. [Project Overview](#1-project-overview)
+* [Project Overview](#project-overview)
 
-2. [Business Objectives](#2-business-objectives)
+* [Business Objectives](#business-objectives)
 
-3. [Dataset](#3-dataset)
+* [Dataset](#dataset)
 
-4. [Database Design & Normalization](#4-database-design--normalization)
+* [Database Design & Normalization](#database-design--normalization)
 
-5. [Indexing & Performance Strategy](#5-indexing--performance-strategy)
+* [Indexing & Performance Strategy](#indexing--performance-strategy)
 
-6. [Data Ingestion](#6-data-ingestion)
+* [Data Ingestion](#data-ingestion)
 
-7. [Analytical Queries](#7-analytical-queries)
+* [Analytical Queries](#analytical-queries)
 
-8. [Key Insights](#8-key-insights)
+* [Key Insights](#key-insights)
 
-9. [Skills Demonstrated](#9-skills-demonstrated)
+* [Skills Demonstrated](#skills-demonstrated)
 
-10. [Contact](#10-contact)
+* [Contact](#contact)
     
 
-# 1. Project Overview
+## Project Overview
 
 This project analyzes a simulated transactional sales dataset representing one year of operations for a pizza restaurant.
 
@@ -45,7 +45,7 @@ Unlike a basic SQL practice project, this version emphasizes:
 * Structured data ingestion using Python
   
 
-# 2. Business Objectives
+## Business Objectives
 
 This analysis aims to answer the following:
 
@@ -60,16 +60,20 @@ This analysis aims to answer the following:
 * How does revenue change month-over-month?
 
 * Does a small subset of pizzas contribute most of the revenue (Pareto principle)?
-* 
+  
 
-# 3. Dataset
+## Dataset
 
-Source: Publicly available pizza sales dataset (Kaggle)
+Source: Publicly available pizza sales dataset on  
+[Kaggle - Pizza Place Sales](https://www.kaggle.com/datasets/mysarahmadbhat/pizza-place-sales)
+
+Note: The raw CSV files are not included in this repository.  
+Please download them directly from Kaggle before running the ETL notebook.
 
 Scope: One year of transactional sales data.
 
-## Tables
-## orders
+### Tables
+### orders
 
 * order_id – Unique identifier for each order
 
@@ -79,7 +83,7 @@ Scope: One year of transactional sales data.
 
 In the optimized schema, date and time were merged into a single order_datetime column for improved filtering and indexing efficiency.
 
-## order_details
+### order_details
 
 * order_details_id – Unique row identifier
 
@@ -89,7 +93,7 @@ In the optimized schema, date and time were merged into a single order_datetime 
 
 * quantity – Quantity ordered
 
-## pizzas
+### pizzas
 
 * pizza_id – Unique identifier (type + size combination)
 
@@ -99,7 +103,7 @@ In the optimized schema, date and time were merged into a single order_datetime 
 
 * price – Price in USD
 
-## pizza_types
+### pizza_types
 
 * pizza_type_id – Unique identifier
 
@@ -109,14 +113,15 @@ In the optimized schema, date and time were merged into a single order_datetime 
 
 * ingredients – Comma-delimited ingredient list
 
-Note: Ingredients are stored as a delimited string for simplicity. This could be further normalized into a separate ingredient table if ingredient-level analysis were required.
+Note: Ingredients are stored as a delimited string for simplicity.  
+This could be further normalized into a separate ingredient table if ingredient-level analysis were required.
 
 
-# 4. Database Design & Normalization
+## Database Design & Normalization
 
 The schema was designed using relational modeling principles.
 
-## Key Improvements
+### Key Improvements
 
 * Implemented PRIMARY KEY and FOREIGN KEY constraints
 
@@ -126,21 +131,22 @@ The schema was designed using relational modeling principles.
 
 * Used consistent constraint naming conventions
 
-* Avoided redundant indexing  
-Schema file available in: https://github.com/Santosh96736/pizzahut_sales_analysis_mysql/blob/main/schema/pizzahut_schema.sql
+* Avoided redundant indexing
+  
+Schema file available in: [Schema](https://github.com/Santosh96736/pizzahut_sales_analysis_mysql/blob/main/schema/pizzahut_schema.sql)
 
 
-# 5. Indexing & Performance Strategy
+## Indexing & Performance Strategy
 
 Indexes were created based on cardinality and selectivity analysis rather than blindly indexing all columns.
 
-## Implemented Indexes
+### Implemented Indexes
 
 * idx_orders_order_datetime
 
 * idx_pizza_types_category
 
-## Performance Validation
+### Performance Validation
 
 Used EXPLAIN to verify:
 
@@ -155,11 +161,11 @@ Used EXPLAIN to verify:
 This ensures indexing is applied only where it meaningfully improves query performance.
 
 
-# 6. Data Ingestion
+## Data Ingestion
 
 Data was loaded into MySQL using a Jupyter Notebook.
 
-## Tools Used
+### Tools Used
 
 * Pandas
 
@@ -167,7 +173,7 @@ Data was loaded into MySQL using a Jupyter Notebook.
 
 * mysql-connector
 
-## Steps Performed
+### Steps Performed
 
 * Read CSV files
 
@@ -181,11 +187,11 @@ Data was loaded into MySQL using a Jupyter Notebook.
 
 Note: Minimal transformation was applied. Data integrity is enforced at the database level using constraints.
 
-Notebook available in: https://github.com/Santosh96736/pizzahut_sales_analysis_mysql/tree/main/etl
+Notebook available in: [Ingestion](https://github.com/Santosh96736/pizzahut_sales_analysis_mysql/blob/main/etl/PizzaHut_Python_codes.ipynb)
 
 
-# 7. Analytical Queries
-## Basic KPIs
+## Analytical Queries
+### Basic KPIs
 
 * Total Revenue
 
@@ -195,7 +201,7 @@ Notebook available in: https://github.com/Santosh96736/pizzahut_sales_analysis_m
 
 * Average Order Value
 
-## Product Performance
+### Product Performance
 
 * Highest revenue-generating pizza
 
@@ -205,7 +211,7 @@ Notebook available in: https://github.com/Santosh96736/pizzahut_sales_analysis_m
 
 * Price vs quantity relationship
 
-## Time-Based Analysis
+### Time-Based Analysis
 
 * Peak sales hour
 
@@ -215,7 +221,7 @@ Notebook available in: https://github.com/Santosh96736/pizzahut_sales_analysis_m
 
 * Month-over-month growth using LAG
 
-## Advanced Analysis
+### Advanced Analysis
 
 * Pareto analysis (80/20 rule)
 
@@ -225,10 +231,15 @@ Notebook available in: https://github.com/Santosh96736/pizzahut_sales_analysis_m
 
 * Size preference by category (Window functions)
 
-All queries are available in: https://github.com/Santosh96736/pizzahut_sales_analysis_mysql/tree/main/queries
+All queries are available in:
+- [KPI](https://github.com/Santosh96736/pizzahut_sales_analysis_mysql/blob/main/queries/kpi_queries.sql)
+- [Product Performance](https://github.com/Santosh96736/pizzahut_sales_analysis_mysql/blob/main/queries/product_performance_queries.sql)
+- [Time Based](https://github.com/Santosh96736/pizzahut_sales_analysis_mysql/blob/main/queries/time_based_patterns_queries.sql)
+- [Advanced](https://github.com/Santosh96736/pizzahut_sales_analysis_mysql/blob/main/queries/advance_patterns_queries.sql)
+- [Performance Validation](https://github.com/Santosh96736/pizzahut_sales_analysis_mysql/blob/main/queries/performance_validation_query.sql)
 
 
-# 8. Key Insights
+## Key Insights
 * Peak sales occur at 12 PM, indicating strong lunch demand.
 * Friday generates the highest weekly revenue.
 * Revenue fluctuates month-over-month with seasonal variation.
@@ -237,7 +248,7 @@ All queries are available in: https://github.com/Santosh96736/pizzahut_sales_ana
 * Revenue follows the Pareto principle.
 
 
-# 9. Skills Demonstrated
+## Skills Demonstrated
 * Relational database design
 
 * Schema normalization
@@ -255,10 +266,11 @@ All queries are available in: https://github.com/Santosh96736/pizzahut_sales_ana
 * Business insight extraction
 
 
- # 10. Contact
- * Email - santosh96736@gmail.com
+ ## Contact
 
- * LinkedIn - [www.linkedin.com/in/santosh96736-data-analyst](https://www.linkedin.com/in/santosh96736-data-analyst/)
-
- * GitHub - https://github.com/Santosh96736/pizzahut_sales_analysis_mysql
+If you would like to discuss this project or explore collaboration opportunities, feel free to reach out.
+ 
+Email : santosh96736@gmail.com  
+LinkedIn : [www.linkedin.com/in/santosh96736-data-analyst](https://www.linkedin.com/in/santosh96736-data-analyst/)  
+GitHub : https://github.com/Santosh96736/pizzahut_sales_analysis_mysql
 
