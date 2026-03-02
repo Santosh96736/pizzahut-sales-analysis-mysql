@@ -5,23 +5,23 @@ Structured and performance-optimized sales analysis of a stimulated PizzaHut dat
 
 # Table of Contents
 
-1. [Project Overview](#project_overview)
+1. [Project Overview](#project-overview)
 
-2. [Business Objectives](#business_objectives)
+2. [Business Objectives](#business-objectives)
 
 3. [Dataset](#dataset)
 
-4. [Database Design & Normalization](#database_design_normalization)
+4. [Database Design & Normalization](#database-design-normalization)
 
-5. [Indexing & Performance Strategy](#indexing_performance_strategy)
+5. [Indexing & Performance Strategy](#indexing-performance-strategy)
 
-6. [Data Ingestion](#data_ingestion)
+6. [Data Ingestion](#data-ingestion)
 
-7. [Analytical Queries](#analytical_queries)
+7. [Analytical Queries](#analytical-queries)
 
-8. [Key Insights](#key_insights)
+8. [Key Insights](#key-insights)
 
-9. [Skills Demonstrated](#skills_demonstrated)
+9. [Skills Demonstrated](#skills-demonstrated)
 
 10. [Contact](#contact)
     
