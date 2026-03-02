@@ -127,7 +127,7 @@ The schema was designed using relational modeling principles.
 * Used consistent constraint naming conventions
 
 * Avoided redundant indexing  
-Schema file available in: schema/pizzahut_schema.sql
+Schema file available in: https://github.com/Santosh96736/pizzahut_sales_analysis_mysql/blob/main/schema/pizzahut_schema.sql
 
 
 # 5. Indexing & Performance Strategy
@@ -181,7 +181,7 @@ Data was loaded into MySQL using a Jupyter Notebook.
 
 Note: Minimal transformation was applied. Data integrity is enforced at the database level using constraints.
 
-Notebook available in:
+Notebook available in: https://github.com/Santosh96736/pizzahut_sales_analysis_mysql/tree/main/etl
 
 
 # 7. Analytical Queries
@@ -225,10 +225,16 @@ Notebook available in:
 
 * Size preference by category (Window functions)
 
-All queries are available in:
+All queries are available in: https://github.com/Santosh96736/pizzahut_sales_analysis_mysql/tree/main/queries
 
 
 # 8. Key Insights
+* Peak sales occur at 12 PM, indicating strong lunch demand.
+* Friday generates the highest weekly revenue.
+* Revenue fluctuates month-over-month with seasonal variation.
+* Classic category contributes the highest volume (30%).
+* Thai Chicken Pizza generates the highest total revenue.
+* Revenue follows the Pareto principle.
 
 
 # 9. Skills Demonstrated
